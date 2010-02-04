@@ -79,8 +79,8 @@
     settings: {
       opacity      : 0,
       overlay      : true,
-      loadingImage : '/facebox/loading.gif',
-      closeImage   : '/facebox/closelabel.gif',
+      loadingImage : './img/loading.gif',
+      closeImage   : './img/closelabel.gif',
       imageTypes   : [ 'png', 'jpg', 'jpeg', 'gif' ],
       topPosition  : 'dynamic',
       faceboxHtml  : '\
@@ -98,7 +98,7 @@
                 </div> \
                 <div class="footer"> \
                   <a href="#" class="close"> \
-                    <img src="/facebox/closelabel.gif" title="close" class="close_image" /> \
+                    <img src="./img/closelabel.gif" title="close" class="close_image" /> \
                   </a> \
                 </div> \
               </td> \
