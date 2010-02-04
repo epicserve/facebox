@@ -1,7 +1,7 @@
 /*
  * Facebox (for jQuery)
  * version: 1.3 (02/04/2010)
- * @requires jQuery v1.2 or later
+ * @requires jQuery v1.2.6 or later
  *
  * Examples at http://famspam.com/facebox/
  *
@@ -80,37 +80,34 @@
       opacity      : 0,
       overlay      : true,
       loadingImage : './img/loading.gif',
-      closeImage   : './img/closelabel.gif',
       imageTypes   : [ 'png', 'jpg', 'jpeg', 'gif' ],
       topPosition  : 'dynamic',
       faceboxHtml  : '\
-    <div id="facebox" style="display:none;"> \
+      <div id="facebox" style="display:none;"> \
       <div class="popup"> \
         <table> \
           <tbody> \
             <tr> \
-              <td class="tl"/><td class="b"/><td class="tr"/> \
+              <td class="tl" /><td class="b" /><td class="tr" /> \
             </tr> \
             <tr> \
-              <td class="b"/> \
+              <td class="b" /> \
               <td class="body"> \
                 <div class="content"> \
                 </div> \
                 <div class="footer"> \
-                  <a href="#" class="close"> \
-                    <img src="./img/closelabel.gif" title="close" class="close_image" /> \
-                  </a> \
+                  <a href="#" class="close">Close</a> \
                 </div> \
               </td> \
-              <td class="b"/> \
+              <td class="b" /> \
             </tr> \
             <tr> \
-              <td class="bl"/><td class="b"/><td class="br"/> \
+              <td class="bl" /><td class="b" /><td class="br" /> \
             </tr> \
           </tbody> \
         </table> \
       </div> \
-    </div>'
+      </div>'
     },
 
     getTopPosition: function() {
@@ -207,9 +204,8 @@
     if (settings) $.extend($.facebox.settings, settings)
     $('body').append($.facebox.settings.faceboxHtml)
 
-    var preload = [ new Image(), new Image() ]
-    preload[0].src = $.facebox.settings.closeImage
-    preload[1].src = $.facebox.settings.loadingImage
+    var preload = [ new Image() ]
+    preload[0].src = $.facebox.settings.loadingImage
 
     $('#facebox').find('.b:first, .bl, .br, .tl, .tr').each(function() {
       preload.push(new Image())
@@ -217,7 +213,6 @@
     })
 
     $('#facebox .close').click($.facebox.close)
-    $('#facebox .close_image').attr('src', $.facebox.settings.closeImage)
   }
   
   // getPageScroll() by quirksmode.com
@@ -254,7 +249,6 @@
     var $s = $.facebox.settings
 
     $s.loadingImage = $s.loading_image || $s.loadingImage
-    $s.closeImage = $s.close_image || $s.closeImage
     $s.imageTypes = $s.image_types || $s.imageTypes
     $s.faceboxHtml = $s.facebox_html || $s.faceboxHtml
   }

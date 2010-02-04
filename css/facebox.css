@@ -77,6 +77,28 @@
   vertical-align: middle;
 }
 
+#facebox .footer a.close {
+	float: right;
+	display: block;
+	width: 66px;
+	height: 22px;
+	line-height: 0px;
+	text-align: left;
+	text-indent: -10000px;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	background: url('../img/closelabel.png') no-repeat;
+}
+
+#facebox .footer a.close:hover {
+	background-position: 0px -22px;
+}
+
+#facebox .footer a.close:active {
+	background-position: 0px -44px;
+}
+
 #facebox .tl, #facebox .tr, #facebox .bl, #facebox .br {
   height: 10px;
   width: 10px;
